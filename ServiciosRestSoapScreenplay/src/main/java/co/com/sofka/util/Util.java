@@ -9,10 +9,15 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Util {
-    public static @NotNull String getBody(String value) {
+    public static @NotNull String getBodyCountryCurrency(String value) {
         String cuerpo = String.format(readFile("src/test/resources/xmlfiles/countrycurrency.xml"), value);
         return cuerpo;
     }
+    public static @NotNull String getBodyCapitalCity(String value) {
+        String cuerpo = String.format(readFile("src/test/resources/xmlfiles/capitalcity.xml"), value);
+        return cuerpo;
+    }
+
     public static boolean verifyIfFileExist(String filePath) {
         File file = new File(filePath);
         /*LOGGER.info("\n\r****Verificación de archivo:****\r");

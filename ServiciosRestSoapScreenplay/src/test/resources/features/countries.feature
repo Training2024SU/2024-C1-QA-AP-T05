@@ -3,6 +3,7 @@ Feature: Consulting countries information
   want to consult about currency, flags, capital cities
   to learn test the answers
 
+  @Soap1
   Scenario Outline: Consult currency by country
     Given the user want to consult the currency by country
     When makes the request to consult the currency of the country with code "<code>"
@@ -14,4 +15,26 @@ Feature: Consulting countries information
       | CO   | Pesos        |
       | SG   | Dollars      |
 
+  @Soap2
+  Scenario Outline: Consult capital city
+    Given the user want to consult the country capital city
+    When makes the request to consult by country "<code>"
+    Then should obtain a status code 200
+    And should get the capital city "<capitalCity>"
+    Examples:
+      | code | capitalCity |
+      | JP   | Tokyo       |
+      | CY   | Nicosia     |
+      | VE   | Caracas     |
 
+  @Soap3
+  Scenario Outline: Consult all country names
+    Given the user want to consult all country names
+    When makes the request to consult them
+    Then should get a status code 200
+    And should see the country name "<countryName>" including its code "<code>"
+    Examples:
+      | countryName | code    |
+      | Uruguay     | Uruguay |
+      | Peru        | PE      |
+      | China       | CN      |

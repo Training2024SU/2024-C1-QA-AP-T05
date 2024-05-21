@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import static co.com.sofka.Constants.*;
 import static co.com.sofka.questions.ResponseSoap.responseSoap;
 import static co.com.sofka.tasks.DoPost.doPost;
-import static co.com.sofka.util.Util.getBody;
+import static co.com.sofka.util.Util.getBodyCountryCurrency;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -23,9 +23,9 @@ public class ConsultCurrencyStepDefinitions extends SetUp {
     @When("makes the request to consult the currency of the country with code {string}")
     public void makesTheRequestToConsultTheCurrencyOfTheCountryWithCode(String countryCode) {
         actor.attemptsTo(
-                doPost().withTheResource(RESOURCE)
+                doPost().withTheResource(RESOURCE_CURRENCY_NAME)
                         .andHeaders(headers())
-                        .andTheBody(getBody(countryCode))
+                        .andTheBody(getBodyCountryCurrency(countryCode))
         );
     }
 
