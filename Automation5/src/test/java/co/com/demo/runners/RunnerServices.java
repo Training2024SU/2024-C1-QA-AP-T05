@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "/home/dan/Desktop/2024-C1-QA-AP-T05/Automation5/src/test/resources/features",
         glue = "co.com.demo.stepdefinitions",
-        tags = "@CatFacts",
+        tags = "@RandomJoke",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 
