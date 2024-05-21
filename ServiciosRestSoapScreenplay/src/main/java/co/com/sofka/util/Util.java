@@ -17,6 +17,10 @@ public class Util {
         String cuerpo = String.format(readFile("src/test/resources/xmlfiles/capitalcity.xml"), value);
         return cuerpo;
     }
+    public static @NotNull String getAllCountries() {
+        String cuerpo = readFile("src/test/resources/xmlfiles/allcountries.xml");
+        return cuerpo;
+    }
 
     public static boolean verifyIfFileExist(String filePath) {
         File file = new File(filePath);
