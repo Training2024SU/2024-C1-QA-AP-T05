@@ -29,15 +29,7 @@ public class DoPost implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        if (headers == null){
-            actor.attemptsTo(
-                    OurPost.resource(resource).with(
-                            requestSpecification -> requestSpecification
-                                    .relaxedHTTPSValidation()
-                                    .body(body)
-                    )
-            );
-        }
+
         actor.attemptsTo(
                 OurPost.resource(resource).with(
                         requestSpecification -> requestSpecification

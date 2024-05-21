@@ -29,6 +29,7 @@ public class SubmitPostsSD extends ServiceSetup {
                         .andBody(body)
                         .andHeaders(super.headers())
         );
+
     }
 
     @And("should see the posts with an id generated and the same data")

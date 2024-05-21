@@ -39,6 +39,4 @@ public class GetAllPostsSD extends ServiceSetup{
         SerenityRest.then().statusCode(statusCode);
     }
 
-
-
 }

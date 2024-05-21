@@ -12,10 +12,9 @@ public class SOAPServiceSetup {
         actor.can(CallAnApi.at(baseUrl));
     }
 
-    protected HashMap<String, Object> baseSoapHeaders(String resource) {
+    protected HashMap<String, Object> headers() {
         HashMap<String, Object> headersCollection = new HashMap<>();
         headersCollection.put("Content-Type", "text/xml;charset=UTF-8");
-        headersCollection.put("SOAPAction", resource);
         return headersCollection;
     }
 }
