@@ -2,9 +2,7 @@ package com.davidbonelo.stepdefinitions;
 
 import com.davidbonelo.models.User;
 import com.davidbonelo.models.factories.UserFactory;
-import com.davidbonelo.tasks.AddBook;
-import com.davidbonelo.tasks.CreateUser;
-import com.davidbonelo.tasks.GenerateToken;
+import com.davidbonelo.tasks.*;
 import io.cucumber.java.en.*;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actors.Cast;
@@ -13,7 +11,7 @@ import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
 import static com.davidbonelo.Constants.BOOKSTORE_BASE;
 import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 
 public class BookstoreSteps {
 
@@ -22,8 +20,8 @@ public class BookstoreSteps {
         OnStage.setTheStage(Cast.whereEveryoneCan(CallAnApi.at(BOOKSTORE_BASE)));
     }
 
-    @Given("{actor} can access the Bookstore")
-    public void actorCanAccessTheBookstore(Actor actor) {
+    @Given("{actor} has his token access")
+    public void davidHasHisTokenAccess(Actor actor) {
         User user = UserFactory.createFakeUser(null);
         actor.wasAbleTo(
                 CreateUser.as(user),
@@ -53,6 +51,23 @@ public class BookstoreSteps {
         actor.should(
                 seeThatResponse("The book was added successfully",
                         response -> response.body("books[0].isbn", equalTo(isbn)))
+        );
+    }
+
+    @When("{actor} requests the list of available books")
+    public void mariaRequestsTheListOfAvailableBooks(Actor actor) {
+        actor.attemptsTo(
+                FetchBookList.all()
+        );
+    }
+
+    @And("{actor} should get a list with all the books")
+    public void sheShouldGetAListWithAllTheBooks(Actor actor) {
+        actor.should(
+                seeThatResponse(
+                        response -> response
+                                .body("books", is(not(empty())))
+                )
         );
     }
 }

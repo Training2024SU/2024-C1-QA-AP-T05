@@ -7,9 +7,14 @@ Feature: Manage book collection
   Background:
     Given the user can access the bookstore service
 
+  Scenario: Get available books list
+    When Maria requests the list of available books
+    Then she should receive a response with status 200
+    And she should get a list with all the books
+
   @CriticalRoute
   Scenario: Add a book to a collection
-    Given David can access the Bookstore
+    Given David has his token access
     When he adds the book with ISBN "9781449365035" to my collection
     Then he should receive a response with status 201
     And he should be able to see the book in his collection
