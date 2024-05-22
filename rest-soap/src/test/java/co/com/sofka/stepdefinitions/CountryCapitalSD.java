@@ -36,5 +36,4 @@ public class CountryCapitalSD extends SOAPServiceSetup {
         );
     }
 
-
 }

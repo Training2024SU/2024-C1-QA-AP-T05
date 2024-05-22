@@ -11,6 +11,7 @@ Feature: Post a post using jsonplaceholder.typicode.com service
     Then should receive a response of 201
     And should see the posts with an id generated and the same data
     Examples:
-      | userId | title                   | body                                  |
-      | 1      | saludos                 | saludo a mi comunidad                 |
-      | 2      | saludos desde otro user | saludo a mi comunidad desde otro user |
+      | userId | title                       | body                                      |
+      | 1      | saludos                     | saludo a mi comunidad                     |
+      | 2      | saludos desde otro user     | saludo a mi comunidad desde otro user     |
+      | 2      | saludos desde el mismo user | saludo a mi comunidad desde el mismo user |
