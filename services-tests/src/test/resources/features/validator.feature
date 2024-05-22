@@ -1,3 +1,4 @@
+@service
 Feature: Isbn validation
 
   Background:
