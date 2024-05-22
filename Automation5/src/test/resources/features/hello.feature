@@ -9,3 +9,6 @@ Feature: Hello Service
     Examples:
       | name    |
       | Alice   |
+      | Daniel   |
+      | Sebastian   |
+      | Jimena   |
