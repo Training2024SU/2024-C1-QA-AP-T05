@@ -14,8 +14,8 @@ public class SetupService {
 
     protected HashMap<String, Object> headers(){
         HashMap<String, Object> headersCollection = new HashMap<>();
-        //headersCollection.put("Content-Type","text/xml;charset=UTF-8");
-        //headersCollection.put("SOAPAction","http://tempuri.org/Add");
+        headersCollection.put("Content-Type","text/xml;charset=UTF-8");
+        headersCollection.put("SOAPAction","AddInteger");
         headersCollection.put("Content-Type", "application/json");
         return headersCollection;
     }

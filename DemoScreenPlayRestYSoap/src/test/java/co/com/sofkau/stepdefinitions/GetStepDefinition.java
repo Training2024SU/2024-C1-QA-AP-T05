@@ -34,15 +34,11 @@ public class GetStepDefinition extends SetupService {
     }
     @Then("deberia obtener un codigo de estado de la respuesta {int}")
     public void deberia_obtener_un_codigo_de_estado_de_la_respuesta(Integer codigoEstado) {
-        try {
-            actor.should(
-                    seeThat("The status code",
-                            ResponseCode.was(), equalTo(codigoEstado)
-                    )
-            );
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        actor.should(
+                seeThat("The status code",
+                        ResponseCode.was(), equalTo(codigoEstado)
+                )
+        );
     }
     @Then("el libro con isbn {string} deberia tener el title {string} y el author {string}")
     public void el_libro_con_isbn_deberia_tener_el_title_y_el_author(String isbn, String title, String author) {

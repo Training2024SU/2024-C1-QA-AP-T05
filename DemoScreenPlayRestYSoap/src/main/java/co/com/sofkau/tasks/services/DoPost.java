@@ -32,7 +32,7 @@ public class DoPost implements Task {
         actor.attemptsTo(
                 OurPost.resource(resource).with(
                         requestSpecification -> requestSpecification
-                                //.contentType(ContentType.JSON)
+                                .contentType(ContentType.JSON)
                                 .headers(headers)
                                 .relaxedHTTPSValidation()
                                 .body(body)
