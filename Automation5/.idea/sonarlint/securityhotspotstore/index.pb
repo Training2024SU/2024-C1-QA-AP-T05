@@ -25,7 +25,7 @@ c
 3src/main/java/co/com/demo/interactions/OurPost.java,5/e/5e7bc177724d6f09f7ba40c535e82e754878c660
 [
 +src/main/java/co/com/demo/tasks/DoPost.java,f/e/feb31b8abb8957014a552a9c351bb413dc4b3b11
-b
-2src/main/java/co/com/demo/utils/ArchivosUtils.java,8/b/8b390f5d36880f62531120be13357fba53a7744d
 a
 1src/main/java/co/com/demo/utils/ArchivosUtil.java,b/c/bc0d270b82d24cb77aeb3cec669ac7fb7d034220
+e
+5src/main/java/co/com/demo/questions/ResponseSoap.java,2/b/2b9add39dd299fe2bf153f15747d6c8c92ceb4b7

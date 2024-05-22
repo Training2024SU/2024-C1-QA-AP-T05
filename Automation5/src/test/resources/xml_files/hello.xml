@@ -2,7 +2,7 @@
     <soapenv:Header/>
     <soapenv:Body>
         <hel:HelloRequest>
-            <hel:Name>Daniel</hel:Name>
+            <hel:Name>%s</hel:Name>
         </hel:HelloRequest>
     </soapenv:Body>
 </soapenv:Envelope>

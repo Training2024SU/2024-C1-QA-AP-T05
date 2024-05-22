@@ -15,7 +15,7 @@ public class CatsFactsStepDefinitions extends SetupService {
 
     @Given("the user is on the {string} in page")
     public void theUserIsOnTheInPage(String string) {
-      setupServiceGet(string);
+      setupService(string);
     }
 
     @When("I make a GET request to {string}")
@@ -26,9 +26,9 @@ public class CatsFactsStepDefinitions extends SetupService {
     }
 
     @Then("the server should respond with a status code of {int} \\(OK)")
-    public void theServerShouldRespondWithAStatusCodeOfOK(Integer int1) {
+    public void theServerShouldRespondWithAStatusCodeOfOK(Integer code) {
         actor.should(
-                seeThat("Code", ResponseCode.was(), equalTo(int1))
+                seeThat("Code", ResponseCode.was(), equalTo(code))
         );
 
     }
