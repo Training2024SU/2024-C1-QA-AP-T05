@@ -3,7 +3,8 @@ Feature: Consulting countries information
   want to consult about currency, flags, capital cities
   to learn test the answers
 
-  @Soap1
+  @Soap
+    @Soap1
   Scenario Outline: Consult currency by country
     Given the user want to consult the currency by country
     When makes the request to consult the currency of the country with code "<code>"
@@ -15,7 +16,8 @@ Feature: Consulting countries information
       | CO   | Pesos        |
       | SG   | Dollars      |
 
-  @Soap2
+  @Soap
+    @Soap2
   Scenario Outline: Consult capital city
     Given the user want to consult the country capital city
     When makes the request to consult by country "<code>"
@@ -27,7 +29,8 @@ Feature: Consulting countries information
       | CY   | Nicosia     |
       | VE   | Caracas     |
 
-  @Soap3
+  @Soap
+    @Soap3
   Scenario Outline: Consult all country names
     Given the user want to consult all country names
     When makes the request to consult them

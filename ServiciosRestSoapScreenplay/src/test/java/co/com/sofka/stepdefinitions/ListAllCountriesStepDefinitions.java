@@ -17,7 +17,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 public class ListAllCountriesStepDefinitions extends SetUp {
     @Given("the user want to consult all country names")
     public void theUserWantToConsultAllCountryNames() {
-        setUp(URL);
+        setUp(URL_SOAP);
     }
     @When("makes the request to consult them")
     public void makesTheRequestToConsultThem() {

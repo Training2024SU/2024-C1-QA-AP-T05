@@ -17,7 +17,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 public class ConsultCapitalCityStepDefinitions extends SetUp {
     @Given("the user want to consult the country capital city")
     public void theUserWantToConsultTheCountryCapitalCity() {
-        setUp(URL);
+        setUp(URL_SOAP);
     }
     @When("makes the request to consult by country {string}")
     public void makesTheRequestToConsultByCountry(String countryCode) {

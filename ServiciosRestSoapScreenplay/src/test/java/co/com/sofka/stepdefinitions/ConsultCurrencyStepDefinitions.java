@@ -17,7 +17,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 public class ConsultCurrencyStepDefinitions extends SetUp {
     @Given("the user want to consult the currency by country")
     public void theUserWantToConsultTheCurrencyByCountry() {
-        setUp(URL);
+        setUp(URL_SOAP);
     }
 
     @When("makes the request to consult the currency of the country with code {string}")

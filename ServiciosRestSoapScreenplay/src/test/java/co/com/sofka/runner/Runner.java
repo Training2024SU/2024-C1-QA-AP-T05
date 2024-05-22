@@ -7,10 +7,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/countries.feature",
+        features = "src/test/resources/features",
         glue = "co.com.sofka.stepdefinitions",
-        snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@Soap3"
+        snippets = CucumberOptions.SnippetType.CAMELCASE
+
 )
 public class Runner {
 }
