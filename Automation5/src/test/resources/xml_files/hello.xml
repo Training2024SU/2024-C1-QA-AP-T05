@@ -1,8 +1,8 @@
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://learnwebservices.com/services/hello">
     <soapenv:Header/>
     <soapenv:Body>
-        <HelloRequest xmlns="http://learnwebservices.com/services/hello">
-            <Name>John Doe</Name>
-        </HelloRequest>
+        <hel:HelloRequest>
+            <hel:Name>Daniel</hel:Name>
+        </hel:HelloRequest>
     </soapenv:Body>
 </soapenv:Envelope>
