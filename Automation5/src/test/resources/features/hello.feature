@@ -1,4 +1,7 @@
 Feature: Hello Service
+  As a user of the Hello service
+  I want to receive a custom greeting
+  So that I feel recognized and valued
 
   @Hello
   Scenario Outline: Provide a custom greeting
@@ -10,5 +13,5 @@ Feature: Hello Service
       | name    |
       | Alice   |
       | Daniel   |
-      | Sebastian   |
+      | Sebastian|
       | Jimena   |
