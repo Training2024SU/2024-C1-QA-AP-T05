@@ -1,7 +1,10 @@
 package com.davidbonelo.stepdefinitions;
 
+import com.davidbonelo.interactions.GetAndLog;
+import com.davidbonelo.models.Book;
 import com.davidbonelo.models.User;
 import com.davidbonelo.models.factories.UserFactory;
+import com.davidbonelo.questions.BookResponse;
 import com.davidbonelo.tasks.*;
 import io.cucumber.java.en.*;
 import net.serenitybdd.screenplay.Actor;
@@ -10,6 +13,8 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.rest.abilities.CallAnApi;
 
 import static com.davidbonelo.Constants.BOOKSTORE_BASE;
+import static com.davidbonelo.Constants.BOOK_ENDPOINT;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
 import static org.hamcrest.Matchers.*;
 
@@ -69,5 +74,22 @@ public class BookstoreSteps {
                                 .body("books", is(not(empty())))
                 )
         );
+    }
+
+    @When("{actor} requests the details for the book with isbn {string}")
+    public void juanRequestsTheDetailsForTheBookWithIsbn(Actor actor, String isbn) {
+        actor.attemptsTo(
+                GetAndLog.resource(BOOK_ENDPOINT + "?ISBN=" + isbn)
+        );
+    }
+
+    @And("{actor} should be able to see the book details")
+    public void heShouldBeAbleToSeeTheBookDetails(Actor actor) {
+        actor.should(
+                seeThat(
+                        BookResponse.was(), notNullValue(Book.class)
+                )
+        );
+
     }
 }

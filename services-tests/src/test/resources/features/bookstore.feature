@@ -12,6 +12,11 @@ Feature: Manage book collection
     Then she should receive a response with status 200
     And she should get a list with all the books
 
+  Scenario: Get single book details
+    When Juan requests the details for the book with isbn "9781491950296"
+    Then he should receive a response with status 200
+    And he should be able to see the book details
+
   @CriticalRoute
   Scenario: Add a book to a collection
     Given David has his token access

@@ -39,6 +39,7 @@ dependencies {
 
             group: 'org.json', name: 'json', version: '20231013',
             "ch.qos.logback:logback-classic:${logbackVersion}",
+            'com.google.code.gson:gson:2.11.0',
             "com.fasterxml.jackson.core:jackson-annotations:${jacksonAnnotations}",
             "org.assertj:assertj-core:${assertJVersion}",
             "net.datafaker:datafaker:${dataFakerVersion}",
