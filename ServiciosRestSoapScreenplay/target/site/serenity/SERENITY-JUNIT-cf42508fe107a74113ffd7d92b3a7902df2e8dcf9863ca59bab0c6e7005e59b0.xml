@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Consulting countries information" skipped="0" tests="9" time="0.15" timestamp="2024-05-21 09:10:06"><testcase name="Consult currency by country"/><testcase name="Consult capital city"/><testcase name="Consult all country names"/></testsuite>
