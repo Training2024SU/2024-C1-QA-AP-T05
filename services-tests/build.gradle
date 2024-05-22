@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '4.1.10'
+}
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = "17"
+    targetCompatibility = "17"
+}
+
+group "com.davidbonelo"
+version '1.0.0'
+
+ext {
+    slf4jVersion = '2.0.7'
+    serenityCoreVersion = '4.1.10'
+    serenityCucumberVersion = '4.1.10'
+    junitVersion = '5.10.0'
+    junitPlatformVersion = '1.10.1'
+    assertJVersion = '3.24.2'
+    logbackVersion = '1.4.14'
+    jacksonAnnotations = '2.15.2'
+    dataFakerVersion = '2.2.2'
+}
+
+dependencies {
+    implementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}",
+            "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
+
+            group: 'org.json', name: 'json', version: '20231013',
+            "ch.qos.logback:logback-classic:${logbackVersion}",
+            'com.google.code.gson:gson:2.11.0',
+            "com.fasterxml.jackson.core:jackson-annotations:${jacksonAnnotations}",
+            "org.assertj:assertj-core:${assertJVersion}",
+            "net.datafaker:datafaker:${dataFakerVersion}",
+            "org.junit.jupiter:junit-jupiter-api:${junitVersion}",
+            "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+
+    testImplementation "org.junit.platform:junit-platform-suite:${junitPlatformVersion}"
+}
+test {
+    systemProperties System.getProperties()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate)
