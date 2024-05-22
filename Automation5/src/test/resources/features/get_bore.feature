@@ -4,8 +4,16 @@ Feature: Get Random Activity
   So that I can find something interesting to do when I'm bored
 
   @RandomActivity
-  Scenario: Get a Random Activity
+  Scenario Outline: Get a Random Activity
     Given the user is on the "https://www.boredapi.com/" in page
-    When I make a GET request to "api/activity"
+    When I make a GET request to "api/activity?participants=<participants>"
     Then the server should respond with a status code of 200 (OK)
     And the response body should contain an activity
+
+    Examples:
+      |participants|
+      |1|
+      |5|
+      |3|
+
+
