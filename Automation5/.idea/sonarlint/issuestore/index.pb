@@ -29,3 +29,5 @@ a
 1src/main/java/co/com/demo/utils/ArchivosUtil.java,b/c/bc0d270b82d24cb77aeb3cec669ac7fb7d034220
 e
 5src/main/java/co/com/demo/questions/ResponseSoap.java,2/b/2b9add39dd299fe2bf153f15747d6c8c92ceb4b7
+~
+Nsrc/test/java/co/com/demo/stepdefinitions/NumberConversionStepDefinitions.java,7/7/779f346553de49803edc2d8fd6f7ff989136024c
