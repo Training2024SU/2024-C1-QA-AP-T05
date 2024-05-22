@@ -1,0 +1,26 @@
+package osorio.alvarez.devon.interactions;
+
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.rest.interactions.RestInteraction;
+
+import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.rest.abilities.CallAnApi.as;
+
+public class OurPut extends RestInteraction {
+
+
+    private final String resource;
+
+    public OurPut(String resource) {
+        this.resource = resource;
+    }
+
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        rest().log().all().post(as(actor).resolve(resource)).then().log().all();
+    }
+
+    public static OurPut resource(String resource) {
+        return instrumented(OurPut.class, resource);
+    }
+}
