@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="Servicio de consulta de Pokémon" skipped="0" tests="1" time="0.1" timestamp="2024-05-23 05:07:51"><testcase name="Consultar información de un Pokémon por nombre"><error message="Cannot invoke &quot;Object.getClass()&quot; because &quot;object&quot; is null" type="java.lang.NullPointerException">Cannot invoke "Object.getClass()" because "object" is null</error><system-err>Cannot invoke "Object.getClass()" because "object" is null&#13;
+net.thucydides.core.steps.StepFactory.injectOtherDependenciesInto(StepFactory.java:208)&#13;
+net.thucydides.core.steps.StepFactory.instantiateUniqueStepLibraryFor(StepFactory.java:227)&#13;
+net.thucydides.core.steps.StepFactory.getUniqueStepLibraryFor(StepFactory.java:155)&#13;
+co.com.sofka.stepdefinitions.PokemonStepDefinitions.el_usuario_envía_una_solicitud_para_obtener_información_del_pokémon_con_nombre(PokemonStepDefinitions.java:24)&#13;
+✽.el usuario envía una solicitud para obtener información del Pokémon con nombre "pikachu"(file:///C:/Users/kathe/OneDrive/Desktop/EjScre/TallerCincoSRS/src/test/resources/features/pokemon.feature:10)&#13;
+</system-err></testcase></testsuite>

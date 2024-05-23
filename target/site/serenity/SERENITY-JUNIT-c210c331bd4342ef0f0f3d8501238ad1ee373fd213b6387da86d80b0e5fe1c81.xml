@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Servicio de Consulta del Clima" skipped="0" tests="1" time="0.09" timestamp="2024-05-23 01:50:38"><testcase name="Obtener el clima de una ciudad"><failure message="1 expectation failed.&#10;Expected status code &lt;200&gt; but was &lt;401&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;401&gt;.
+</failure><system-err>1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;401&gt;.
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)&#13;
+io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)&#13;
+co.com.sofka.stepdefinitions.ClimaStepDefinitions.debería_obtener_el_nombre_de_la_ciudad_como(ClimaStepDefinitions.java:24)&#13;
+✽.debería obtener el nombre de la ciudad como "London"(file:///C:/Users/kathe/OneDrive/Desktop/EjScre/TallerCincoSRS/src/test/resources/features/clima.feature:10)&#13;
+</system-err></testcase></testsuite>
