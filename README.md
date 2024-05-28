@@ -4,7 +4,7 @@
 
 1. Seleccione 3 peticiones Rest que sean:
 
-- De fuentes diferentes reqres, 
+- De fuentes diferentes a reqres, 
 - Seleccione entre (post, put, patch, get, delete)
 - diseñe almenos 3 escenarios de prueba
 - Incluya comparaciónes (assert) empleando las librerias Json Simple o Gson, y sin librerías (String).
