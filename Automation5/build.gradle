@@ -1,0 +1,101 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "net.serenity-bdd:serenity-gradle-plugin:4.0.46"
+        classpath "net.serenity-bdd:serenity-single-page-report:4.0.46"
+    }
+}
+
+plugins {
+    id 'java'
+    id 'idea'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '4.0.46'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
+
+group = 'co.com.demo'
+version = '1.0-SNAPSHOT'
+
+wrapper {
+    gradleVersion = '8.2.1'
+    distributionType = Wrapper.DistributionType.ALL
+}
+
+ext {
+    slf4jVersion = '2.0.7'
+    serenityCoreVersion = '4.0.46'
+    serenityCucumberVersion = '4.0.46'
+    junitVersion = '5.10.0'
+    junitVintageVersion = '5.10.0'
+    junitPlatformVersion = '1.10.1'
+    assertJVersion = '3.24.2'
+    logbackVersion = '1.4.14'
+    jacksonAnnotations = '2.15.2'
+    lombokVersion = '1.18.22'
+    dataFakerVersion = '2.1.0'
+    seleniumDevToolsVersion = '4.12.1'
+    serenityEnsureVersion = '3.9.7'
+    serenityRestVersion = '3.2.5'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+dependencies {
+    implementation "org.slf4j:slf4j-simple:${slf4jVersion}"
+
+    // Dependencias de Serenity BDD
+    implementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}"
+    implementation "net.serenity-bdd:serenity-junit:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-ensure:${serenityEnsureVersion}"
+
+    implementation "org.projectlombok:lombok:${lombokVersion}"
+    implementation "ch.qos.logback:logback-classic:${logbackVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:${jacksonAnnotations}"
+    implementation "org.assertj:assertj-core:${assertJVersion}"
+    implementation "net.datafaker:datafaker:${dataFakerVersion}"
+    implementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    implementation "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+
+    testImplementation "org.junit.platform:junit-platform-suite:${junitPlatformVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter:${junitVersion}"
+
+    implementation "org.seleniumhq.selenium:selenium-devtools-v114:${seleniumDevToolsVersion}"
+
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    testRuntimeOnly "org.junit.vintage:junit-vintage-engine:${junitVintageVersion}"
+
+    testCompileOnly 'junit:junit:4.13.1'
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties System.getProperties()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy("aggregate")
